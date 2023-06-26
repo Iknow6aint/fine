@@ -4,15 +4,16 @@ import Screen from '../components/Screen'
 import tailwind from 'tailwind-react-native-classnames';
 import AppHead from '../components/AppHead';
 import AppButton from '../components/AppButton'
-import { selectTotalItems, selectTotalPrice } from '../redux/slices/basketSlice';
-import { useSelector } from 'react-redux';
+//import { selectTotalItems, selectTotalPrice } from '../redux/slices/basketSlice';
+//import { useSelector } from 'react-redux';
 import colors from '../configs/colors';
 import CartItems from '../components/CartItems'
 import CheckoutModal from '../components/CheckoutModal'
 
 const CartScreen = () => {
-    const totalPrice = useSelector(selectTotalPrice)
-    const getAllItems = useSelector(selectTotalItems)
+    const totalPrice = 10
+    const getAllItems = false
+    // useSelector(selectTotalItems)
     const [modalVisible, setModalVisible] = useState(false)
 
     return (

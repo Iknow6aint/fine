@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Feather } from '@expo/vector-icons';
 import colors from '../configs/colors';
 import HomeScreen from '../screens/HomeScreen'
-//import TabCartButton from '../components/TabCartButton'
+import TabCartButton from '../components/TabCartButton'
 import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import BrowseScreen from '../screens/BrowseScreen';
@@ -35,18 +35,15 @@ const MainTabNavigator = () => {
                     )
                 }}
             />
-            {<Tab.Screen name="Browse" component={BrowseScreen}
+            {<><Tab.Screen name="Browse" component={BrowseScreen}
                 options={{
                     tabBarIcon: ({ color, size }) => (
                         <Ionicons name="md-search-sharp" color={color} size={size} />
                     )
-                }}
-            />
-                // <Tab.Screen name="Cart" component={CartScreen}
-                //     options={({ navigation }) => ({
-                //         tabBarButton: () => <TabCartButton onPress={() => navigation.navigate('Cart')} />
-                //     })}
-                // />
+                }} /><Tab.Screen name="Cart" component={CartScreen}
+                    options={({ navigation }) => ({
+                        tabBarButton: () => <TabCartButton onPress={() => navigation.navigate('Cart')} />
+                    })} /></>
                 // <Tab.Screen name="Grocery" component={GroceryScreen}
                 //     options={{
                 //         tabBarIcon: ({ color, size }) => (
