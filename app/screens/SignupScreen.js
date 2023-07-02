@@ -26,7 +26,7 @@ const ValidationSchema = yup.object().shape({
 });
 
 
-const SignupScreen = () => {
+const SignupScreen = ({ navigation }) => {
     const signUpUser = ({ }) => { }
     return (
         <Screen style={styles.container}>
