@@ -7,6 +7,11 @@ import * as yup from "yup";
 import AppFormFeilds from "../components/forms/AppFormFeilds";
 import AppSubmitButton from "../components/forms/AppSubmitButton";
 import tailwind from 'tailwind-react-native-classnames';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../configs/firebase";
+
+
+
 
 
 const ValidationSchema = yup.object().shape({
@@ -27,7 +32,31 @@ const ValidationSchema = yup.object().shape({
 
 
 const SignupScreen = ({ navigation }) => {
-    const signUpUser = ({ }) => { }
+
+    const signUpUser = ({ name, email, password }) => {
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((result) => {
+                result.user
+                    .updateProfile({ displayName: name })
+                    .then(() => {
+                        // User account created & signed in!
+                    })
+                    .catch((err) => {
+                        Alert.alert("Error", err.message)
+                    });
+            })
+            .catch((error) => {
+                if (error.code === "auth/email-already-in-use") {
+                    Alert.alert("Error", "That email address is already in use!")
+                }
+
+                if (error.code === "auth/invalid-email") {
+                    Alert.alert("Error", "That email address is invalid!")
+                }
+
+                Alert.alert('ERROR: ', error.message);
+            });
+    };
     return (
         <Screen style={styles.container}>
             <View style={styles.wrapper}>
