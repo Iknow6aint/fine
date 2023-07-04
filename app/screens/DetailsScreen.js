@@ -17,7 +17,7 @@ import { useSelector } from 'react-redux';
 const DetailsScreen = ({ route, navigation }) => {
     const [mapActive, setMapActive] = useState(false)
     const { categories, coordinates, image_url, name, price, rating, review_count } = route?.params?.item
-    const totalPrice = useSelector(selectTotalItems)
+    const totalPrice = useSelector(selectTotalPrice)
     const getAllItems = useSelector(selectTotalItems)
     return (
         <View style={styles.container}>
@@ -66,7 +66,7 @@ const DetailsScreen = ({ route, navigation }) => {
                     <MenuItems resName={name} resImage={image_url} />
                 </View>
             </ScrollView>
-            <ViewCart total={totalPrice} count={getAllItems.length} />
+            <ViewCart total={totalPrice} count={getAllItems} />
         </View>
     )
 }
