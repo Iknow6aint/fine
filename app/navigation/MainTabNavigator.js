@@ -4,10 +4,12 @@ import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import colors from '../configs/colors';
+import TabCartButton from '../components/TabCartButton'
 import HomeScreen from '../screens/HomeScreen';
 import BrowseScreen from '../screens/BrowseScreen';
 import Suggestion from '../screens/Suggestion';
 import AccountScreen from '../screens/AccountScreen';
+import { CartScreen } from '../screens/CartScreen';
 const Tab = createBottomTabNavigator()
 const MainTabNavigator = () => {
     return (
@@ -37,6 +39,11 @@ const MainTabNavigator = () => {
                         <Ionicons name="md-search-sharp" color={color} size={size} />
                     )
                 }}
+            />
+            <Tab.Screen name="Cart" component={CartScreen}
+                options={({ navigation }) => ({
+                    tabBarButton: () => <TabCartButton onPress={() => navigation.navigate('Cart')} />
+                })}
             />
             <Tab.Screen name="Sugestion" component={Suggestion}
                 options={{
