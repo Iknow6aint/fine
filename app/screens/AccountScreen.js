@@ -5,8 +5,12 @@ import tailwind from 'tailwind-react-native-classnames';
 import AppHead from '../components/AppHead';
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../redux/slices/authSlice'
+import { auth } from '../configs/firebase';
+
 const AccountScreen = () => {
-    // const user = useSelector(selectUser)
+    const user = useSelector(selectUser)
     return (
         <Screen style={tailwind`flex-1 bg-white`}>
             <AppHead title={`Account`} icon="settings-outline" />
@@ -14,8 +18,8 @@ const AccountScreen = () => {
                 <View style={tailwind`rounded-full overflow-hidden w-48 h-48 mt-4`}>
                     <Image source={require('..//../assets/images/avatar.gif')} style={tailwind`w-48 h-48`} />
                 </View>
-                <Text style={tailwind`mt-4 text-3xl font-bold`}>user?.name</Text>
-                <Text style={tailwind`text-lg text-indigo-900`}>user?.email</Text>
+                <Text style={tailwind`mt-4 text-3xl font-bold`}>{user?.name}</Text>
+                <Text style={tailwind`text-lg text-indigo-900`}>{user?.email}</Text>
             </View>
             <View style={tailwind`mx-4 border-t border-t-2 mt-5 border-gray-100`}>
                 <Text style={tailwind`text-gray-800 mt-2 text-lg mb-2`}>Saved places</Text>

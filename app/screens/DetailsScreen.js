@@ -10,14 +10,15 @@ import { Entypo } from '@expo/vector-icons';
 import RestaurantMap from '../components/ResturantMap'
 import MenuItems from '../components/MenuItems'
 import ViewCart from '../components/ViewCart';
+import { selectTotalItems, selectTotalPrice } from '../redux/slices/basketSlice';
+import { useSelector } from 'react-redux';
 
 
 const DetailsScreen = ({ route, navigation }) => {
     const [mapActive, setMapActive] = useState(false)
     const { categories, coordinates, image_url, name, price, rating, review_count } = route?.params?.item
-    const totalPrice = '$20'
-    // const getAllItems = useSelector(selectTotalItems)
-
+    const totalPrice = useSelector(selectTotalItems)
+    const getAllItems = useSelector(selectTotalItems)
     return (
         <View style={styles.container}>
             <TouchableOpacity style={tailwind`absolute top-9 left-4 z-30 w-9 h-9 rounded-full bg-white justify-center items-center shadow`} onPress={() => navigation.goBack()}>
@@ -65,7 +66,7 @@ const DetailsScreen = ({ route, navigation }) => {
                     <MenuItems resName={name} resImage={image_url} />
                 </View>
             </ScrollView>
-            <ViewCart />
+            <ViewCart total={totalPrice} count={getAllItems.length} />
         </View>
     )
 }
