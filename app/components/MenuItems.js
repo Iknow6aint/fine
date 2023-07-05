@@ -53,8 +53,8 @@ const MenuItems = ({ resName, resImage }) => {
     }
     return (
         <View style={tailwind`mt-5 mb-12`}>
-            {foods?.map(({ title, description, image, price, id }, index) => (
-                <View style={tailwind`mb-3 flex-row justify-between items-center pb-3 border-b border-gray-100`} key={index} >
+            {foods?.map(({ title, description, image, price, id }) => (
+                <View style={tailwind`mb-3 flex-row justify-between items-center pb-3 border-b border-gray-100`} key={id} >
                     <View style={tailwind`flex-1 pr-3 flex-row items-center`}>
                         {match(id) ? (
                             <BouncyCheckbox fillColor={colors.black} isChecked={true} onPress={() => handleAddRemove(id)} />

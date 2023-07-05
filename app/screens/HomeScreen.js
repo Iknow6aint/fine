@@ -14,9 +14,9 @@ const YELP_API_KEY = "cY7HJSY-ONIDnzQQx8zLSw1c0wIW_DgKNbu9-vGvsmp_ompJYAUWzR7aHw
 const HomeScreen = () => {
     const [activeTab, setActiveTab] = useState("Delivery");
     const [restaurantData, setRestaurantData] = useState(localRestaurants)
-    const [city, setCity] = useState("new york")
+    const [city, setCity] = useState("Holywood")
     const [loading, setLoading] = useState(false)
-    const getRestaurantsFromYelp = () => {
+    function getRestaurantsFromYelp() {
         const yelpUrl = `https://api.yelp.com/v3/businesses/search?term=restaurants&location=${city}`;
 
         const apiOptions = {
@@ -40,7 +40,7 @@ const HomeScreen = () => {
     };
 
     useEffect(() => {
-        // Remove return after adding Yelp API key
+        return// Remove return after adding Yelp API key
         getRestaurantsFromYelp();
     }, [city, activeTab]);
     return (
