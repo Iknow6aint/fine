@@ -12,8 +12,6 @@ import { auth } from "../configs/firebase";
 
 
 
-
-
 const ValidationSchema = yup.object().shape({
     name: yup
         .string()

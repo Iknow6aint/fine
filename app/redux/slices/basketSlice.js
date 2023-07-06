@@ -2,17 +2,17 @@ import { createSlice } from "@reduxjs/toolkit"
 import { getAllCartFoods, getTotalCartItemPrice } from "../../utils/helpers"
 
 const initialState = {
-  items: [],
+    items: [],
 }
 
-const authSlice = createSlice({
-  name: "busket",
-  initialState,
-  reducers: {
-    updateBusket: (state, action) => {
-      state.items = action.payload
+const cart = createSlice({
+    name: "cart",
+    initialState,
+    reducers: {
+        updateBusket: (state, action) => {
+            state.items = action.payload
+        }
     }
-  }
 })
 
 export const { updateBusket } = authSlice.actions
@@ -22,4 +22,4 @@ export const selectTotalPrice = (state) => getTotalCartItemPrice(state.busket.it
 export const selectTotalItems = (state) => getAllCartFoods(state.busket.items)
 
 
-export default authSlice.reducer
+export default cart.reducer
