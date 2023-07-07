@@ -5,8 +5,8 @@ const initialState = {
     items: [],
 }
 
-const cart = createSlice({
-    name: "cart",
+const authSlice = createSlice({
+    name: "busket",
     initialState,
     reducers: {
         updateBusket: (state, action) => {
@@ -22,4 +22,4 @@ export const selectTotalPrice = (state) => getTotalCartItemPrice(state.busket.it
 export const selectTotalItems = (state) => getAllCartFoods(state.busket.items)
 
 
-export default cart.reducer
+export default authSlice.reducer
