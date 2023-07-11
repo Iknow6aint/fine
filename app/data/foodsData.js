@@ -10,7 +10,7 @@ export const foods = [
     {
         id: 'KKD2',
         title: "Fried Chicken",
-        category: "Launch",
+        category: "Lunch",
         description:
             " tenderloin chicken off the sizzles 🔥",
         price: 1900,
@@ -29,7 +29,7 @@ export const foods = [
     {
         id: 'KKD4',
         title: "Chicken  Salad",
-        category: "Launch",
+        category: "Lunch",
         description:
             "One can never go wrong with a chicken caesar salad. Healthy option with greens and proteins!",
         price: 2150,
@@ -48,7 +48,7 @@ export const foods = [
     {
         id: 'KKD6',
         title: "Banga Soup",
-        category: "Breakfast",
+        category: "Dinner",
         description: "Banga Soup and Meat",
         price: 2000,
         image: ''
@@ -89,7 +89,7 @@ export const foods = [
     {
         id: 'KKD11',
         title: "Beans and plantain"
-        , category: "Lauch",
+        , category: "Lunch",
         description: "catfish Soup and Meat",
         price: 2600,
         image: '',
@@ -97,7 +97,7 @@ export const foods = [
     {
         id: 'KKD12',
         title: "Noddles"
-        , category: "Lauch",
+        , category: "Lunch",
         description: "Indomie",
         price: 600,
         image: '',
@@ -105,7 +105,7 @@ export const foods = [
     {
         id: 'KKD13',
         title: "Fish"
-        , category: "Lauch",
+        , category: "Lunch",
         description: "Fish",
         price: 600,
         image: '',
@@ -113,7 +113,7 @@ export const foods = [
     {
         id: 'KKD14',
         title: "Moi Moi"
-        , category: "Lauch",
+        , category: "Lunch",
         description: "Moi Moi",
         price: 600,
         image: '',
@@ -121,7 +121,7 @@ export const foods = [
     {
         id: 'KKD15',
         title: "Yam Pourridge"
-        , category: "Lauch",
+        , category: "Lunch",
         description: "Yam",
         price: 700,
         image: '',
@@ -129,7 +129,7 @@ export const foods = [
     {
         id: 'KKD16',
         title: "Yam Pourridge"
-        , category: "Lauch",
+        , category: "Lunch",
         description: "Indomie",
         price: 700,
         image: '',
@@ -137,7 +137,7 @@ export const foods = [
     {
         id: 'KKD17',
         title: "Ice Cream"
-        , category: "Lauch",
+        , category: "Lunch",
         description: "Ice Cream",
         price: 3000,
         image: '',
@@ -182,4 +182,215 @@ export const foods = [
         price: 3000,
         image: '',
     },
+    {
+        id: 'KKD6',
+        title: 'Banga Soup',
+        category: 'Dinner',
+        description: 'Banga Soup and Meat',
+        price: 2000,
+        image: ''
+    },
+    {
+        id: 'VGF9',
+        title: 'Jollof Rice',
+        category: 'Dinner',
+        description: 'Classic Nigerian Jollof Rice',
+        price: 2500,
+        image: ''
+    },
+    {
+        id: 'FHD2',
+        title: 'Akara',
+        category: 'Breakfast',
+        description: 'Deep-fried Bean Cakes',
+        price: 500,
+        image: ''
+    },
+    {
+        id: 'PLM5',
+        title: 'Egusi Soup',
+        category: 'Lunch',
+        description: 'Egusi Soup with Pounded Yam',
+        price: 1800,
+        image: ''
+    },
+    {
+        id: 'POI8',
+        title: 'Yam Porridge',
+        category: 'Dinner',
+        description: 'Yam Porridge with Vegetables',
+        price: 1500,
+        image: ''
+    },
+    {
+        id: 'MNB3',
+        title: 'Plantain and Eggs',
+        category: 'Breakfast',
+        description: 'Fried Plantain with Scrambled Eggs',
+        price: 800,
+        image: ''
+    },
+    {
+        id: 'RTY7',
+        title: 'Pounded Yam',
+        category: 'Lunch',
+        description: 'Pounded Yam with Egusi Soup',
+        price: 2000,
+        image: ''
+    },
+    {
+        id: 'UIO4',
+        title: 'Fried Rice',
+        category: 'Dinner',
+        description: 'Nigerian-style Fried Rice',
+        price: 2300,
+        image: ''
+    },
+    {
+        id: 'BNM1',
+        title: 'Moimoi',
+        category: 'Breakfast',
+        description: 'Steamed Bean Pudding',
+        price: 400,
+        image: ''
+    },
+    {
+        id: 'QWE0',
+        title: 'Amala',
+        category: 'Lunch',
+        description: 'Amala with Ewedu Soup and Assorted Meat',
+        price: 1800,
+        image: ''
+    },
+    {
+        id: 'YUI9',
+        title: 'Fufu',
+        category: 'Dinner',
+        description: 'Fufu with Ogbono Soup',
+        price: 2100,
+        image: ''
+    },
+    {
+        id: 'POK3',
+        title: 'Akamu (Pap)',
+        category: 'Breakfast',
+        description: 'Nigerian-style Cornmeal Porridge',
+        price: 300,
+        image: ''
+    },
+    {
+        id: 'DFG2',
+        title: 'Efo Riro',
+        category: 'Lunch',
+        description: 'Efo Riro with Pounded Yam',
+        price: 1900,
+        image: ''
+    },
+    {
+        id: 'WQD5',
+        title: 'Suya',
+        category: 'Dinner',
+        description: 'Spicy Grilled Skewered Meat',
+        price: 1200,
+        image: ''
+    },
+    {
+        id: 'HJK7',
+        title: 'Dodo (Fried Plantain)',
+        category: 'Breakfast',
+        description: 'Fried Ripe Plantain',
+        price: 600,
+        image: ''
+    },
+    {
+        id: 'KJH4',
+        title: 'Ewa Agoyin',
+        category: 'Lunch',
+        description: 'Ewa Agoyin with Agege Bread',
+        price: 1000,
+        image: ''
+    },
+    {
+        id: 'POI2',
+        title: 'Nkwobi',
+        category: 'Dinner',
+        description: 'Spicy Cow Foot Delicacy',
+        price: 2500,
+        image: ''
+    },
+    {
+        id: 'ZXC3',
+        title: 'Yam and Egg Sauce',
+        category: 'Breakfast',
+        description: 'Boiled Yam with Tomato Egg Sauce',
+        price: 700,
+        image: ''
+    },
+    {
+        id: 'MNB6',
+        title: 'Ogbono Soup',
+        category: 'Lunch',
+        description: 'Ogbono Soup with Eba',
+        price: 1700,
+        image: ''
+    },
+    {
+        id: 'QWE9',
+        title: 'Pepper Soup',
+        category: 'Dinner',
+        description: 'Assorted Meat Pepper Soup',
+        price: 2200,
+        image: ''
+    },
+    {
+        id: 'POI6',
+        title: 'Agege Bread and Akara',
+        category: 'Breakfast',
+        description: 'Agege Bread with Bean Cakes',
+        price: 600,
+        image: ''
+    },
+    {
+        id: 'BNM8',
+        title: 'Okro Soup',
+        category: 'Lunch',
+        description: 'Okro Soup with Fufu',
+        price: 1800,
+        image: ''
+    },
+    {
+        id: 'QWE2',
+        title: 'Asun',
+        category: 'Dinner',
+        description: 'Spicy Grilled Goat Meat',
+        price: 2400,
+        image: ''
+    },
+    {
+        id: 'POK5',
+        title: 'Yam and Stew',
+        category: 'Breakfast',
+        description: 'Boiled Yam with Tomato Stew',
+        price: 800,
+        image: ''
+    },
+    {
+        id: 'DFG9',
+        title: 'Efo Egusi',
+        category: 'Lunch',
+        description: 'Efo Egusi with Amala',
+        price: 1900,
+        image: ''
+    },
+    {
+        id: 'WQD2',
+        title: 'Nkwobi',
+        category: 'Dinner',
+        description: 'Spicy Cow Foot Delicacy',
+        price: 2500,
+        image: ''
+    }
+
 ];
+
+

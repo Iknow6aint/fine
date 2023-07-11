@@ -1,63 +1,82 @@
 import React, { useEffect, useState } from "react";
-import { Button, Text, View } from 'react-native'
+import { View, Text, TextInput, Button } from 'react-native';
 import { foods } from "../data/foodsData";
+import colors from '../configs/colors';
+import tailwind from 'tailwind-react-native-classnames';
+import Screen from '../components/Screen'
+const tw = tailwind;
+
 
 
 const Suggestion = () => {
-    const [foods, setFoods] = useState(foods);
-    const [filteredFoods, setFilteredFoods] = useState([]);
-    const [selectedCategory, setSelectedCategory] = useState('');
-    const [selectedMaxPrice, setSelectedMaxPrice] = useState('');
+    const [budget, setBudget] = useState('');
+    const [breakfast, setBreakfast] = useState(null);
+    const [lunch, setLunch] = useState(null);
+    const [dinner, setDinner] = useState(null);
 
-    const filterFoods = () => {
-        let filteredResults = foods;
+    const handleBudgetInput = (text) => {
+        setBudget(text);
+    };
 
-        if (selectedCategory !== '') {
-            filteredResults = filteredResults.filter(
-                (food) => food.category === selectedCategory
-            );
-        }
+    const handleFilter = () => {
+        const filteredFood = foods.filter((food) => food.price <= budget);
 
-        if (selectedMaxPrice !== '') {
-            filteredResults = filteredResults.filter(
-                (food) => food.price <= selectedMaxPrice
-            );
-        }
+        const breakfastItems = filteredFood.filter(
+            (food) => food.category == 'Breakfast'
+        );
+        const lunchItems = filteredFood.filter((food) => food.category == 'Lunch');
+        const dinnerItems = filteredFood.filter(
+            (food) => food.category == 'Dinner'
+        );
 
-        // Shuffle the array to get random results
-        for (let i = filteredResults.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [filteredResults[i], filteredResults[j]] = [
-                filteredResults[j],
-                filteredResults[i],
-            ];
-        }
+        setBreakfast(breakfastItems.slice(0, 3));
+        setLunch(lunchItems.slice(0, 3));
+        setDinner(dinnerItems.slice(0, 3));
 
-        // Take the first 3 results
-        const randomResults = filteredResults.slice(0, 3);
-        setFilteredFoods(randomResults);
-    }
+        console.log(breakfast, lunch, dinner);
+
+    };
+
     return (
-        <View>
-            <Text>Food Category:</Text>
-            <Button
-                title="Breakfast"
-                onPress={() => setSelectedCategory('breakfast')}
+        <View style={tw`flex-1 justify-center items-center bg-white`}>
+            <Text style={tw`text-2xl mb-4`}>Budget App</Text>
+            <TextInput
+                style={tw`border border-gray-300 rounded w-64 px-4 py-2 mb-4`}
+                placeholder="Enter your budget"
+                onChangeText={handleBudgetInput}
+                keyboardType="numeric"
             />
-            <Button title="Lunch" onPress={() => setSelectedCategory('lunch')} />
-            <Button title="Meals" onPress={() => setSelectedCategory('meals')} />
-
-            <Text>Max Price:</Text>
-            <Button title="5naira" onPress={() => setSelectedMaxPrice(5)} />
-            <Button title="10 naira" onPress={() => setSelectedMaxPrice(10)} />
-            <Button title="15 naira" onPress={() => setSelectedMaxPrice(15)} />
-
-            <Button title="Filter" onPress={filterFoods} />
-
-            <Text>Filtered Results:</Text>
-            {filteredFoods.map((food) => (
-                <Text key={food.id}>{food.name}</Text>
-            ))}
+            <Button title="Filter" onPress={handleFilter} />
+            {breakfast && (
+                <View style={tw`mt-8`}>
+                    <Text style={tw`text-lg font-bold`}>Breakfast:</Text>
+                    {breakfast.map((item, index) => (
+                        <Text key={index} style={tw`ml-2`}>
+                            {item.title} - ${item.price} Naira
+                        </Text>
+                    ))}
+                </View>
+            )}
+            {lunch && (
+                <View style={tw`mt-8`}>
+                    <Text style={tw`text-lg font-bold`}>Lunch:</Text>
+                    {lunch.map((item, index) => (
+                        <Text key={index} style={tw`ml-2`}>
+                            {item.title} - {item.price} Naira
+                        </Text>
+                    ))}
+                </View>
+            )}
+            {dinner && (
+                <View style={tw`mt-8`}>
+                    <Text style={tw`text-lg font-bold`}>Dinner:</Text>
+                    {dinner.map((item, index) => (
+                        <Text key={index} style={tw`ml-2`}>
+                            {item.title} - {item.price} Naira
+                        </Text>
+                    ))}
+                </View>
+            )}
         </View>
     )
 }
